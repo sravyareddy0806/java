@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int lineNumber = 1;
+        
+        // hasNext() returns true as long as there is another token/line to read
+        while (sc.hasNext()) {
+            // Read the entire line
+            String line = sc.nextLine();
+            
+            // Print line number, space, and content
+            System.out.println(lineNumber + " " + line);
+            
+            // Increment line counter
+            lineNumber++;
+        }
+        
+        sc.close();
+    }
+}

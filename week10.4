@@ -1,0 +1,17 @@
+class MyCalculator implements AdvancedArithmetic {
+    /**
+     * Calculates the sum of all divisors of n.
+     * A divisor is any number i where n % i == 0.
+     */
+    @Override
+    public int divisor_sum(int n) {
+        int sum = 0;
+        // We iterate from 1 to n to find every divisor
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                sum += i;
+            }
+        }
+        return sum;
+    }
+}

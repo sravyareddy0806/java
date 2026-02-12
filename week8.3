@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int[] a = new int[n];
+        
+        for (int i = 0; i < n; i++) {
+            a[i] = scan.nextInt();
+        }
+        scan.close();
+        
+        int negativeSubarraysCount = 0;
+        
+        // Loop through each possible starting index
+        for (int start = 0; start < n; start++) {
+            int currentSum = 0;
+            
+            // Loop through each possible ending index
+            for (int end = start; end < n; end++) {
+                // Add the current element to the sum of the subarray [start...end]
+                currentSum += a[end];
+                
+                // If the sum of this specific subarray is negative, increment count
+                if (currentSum < 0) {
+                    negativeSubarraysCount++;
+                }
+            }
+        }
+        
+        System.out.println(negativeSubarraysCount);
+    }
+}

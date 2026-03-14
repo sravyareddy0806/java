@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int Q = sc.nextInt(); // number of queries
+
+        for (int i = 0; i < Q; i++) {
+            String octal = sc.next();  // read octal number
+
+            int decimal = Integer.parseInt(octal, 8); // octal → decimal
+            String binary = Integer.toBinaryString(decimal); // decimal → binary
+
+            System.out.println(binary);
+        }
+
+        sc.close();
+    }
+}
